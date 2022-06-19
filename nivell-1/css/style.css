@@ -1,0 +1,118 @@
+/* Estils per l'Sprint 1 - Nivell 1 de l'itinerari REACT de la IT Academy */
+/* Alumne: Toni Machado */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+:root {
+    /* header colors */
+    --containerBG: rgb(0,0,0);
+    --navBG: rgb(46,65,88);
+    --navChildren: rgb(232,86,89);
+    --titleBG: rgb(238,123,71);
+    --titleChildren: rgb(253,211,106);
+    /* main colors */
+    --contenidoBG: rgb(78,78,105);
+    --articlesBG: rgb(37,110,174);
+    --contFooterBG: rgb(114,164,195);
+    --asideBG: rgb(254,66,86);
+    --sectionBG: rgb(254,233,139);
+    /* footer color */
+    --footerBG: rgb(229,171,61);
+    /* margins paddings */
+    --padding: 0.7rem;
+    --margin: 0.7rem;
+    --marginContainers : 1.2rem;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+header {
+    background-color: var(--containerBG);
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding);
+    margin-bottom: var(--marginContainers);
+    gap: var(--padding);
+}
+li {
+    list-style: none;
+}
+.nav {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--padding);
+    background-color: var(--navBG);
+    padding: var(--padding);
+}
+.nav > * {
+    background-color: var(--navChildren);
+    padding: var(--padding);
+}
+.nav .logo {
+    flex-grow: 1;
+}
+.nav .links {
+    flex-grow: 3;
+}
+.nav .social {
+    flex-grow: 1;
+}
+.title {
+    background-color: var(--titleBG);
+    padding: var(--padding);
+}
+.title h1 {
+    background-color: var(--titleChildren);
+    padding: var(--padding);
+}
+main {
+    background-color: var(--containerBG);
+    display: flex;
+    flex-flow: row nowrap;
+    padding: var(--padding);
+    margin-bottom: var(--marginContainers);
+    gap: var(--padding);
+}
+main > * {
+    padding: var(--padding);
+    gap: var(--padding); 
+}
+main .contenido {
+    background-color: var(--contenidoBG);
+    flex-grow: 2;
+    padding-right: 2rem;
+    display: grid;
+    grid-template-columns: 50% 50%; 
+}
+main .contenido > * {
+    padding: var(--padding);
+}
+main .aside {
+    background-color: var(--asideBG);
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 1;
+}
+main .contenido article {
+    background-color: var(--articlesBG);
+}
+main .contenido footer {
+    background-color: var(--contFooterBG);
+    grid-column: 1/3;
+}
+main .aside section {
+    background-color: var(--sectionBG);
+    padding: var(--padding);
+}
+.footer {
+    background-color: var(--containerBG);
+    padding: var(--padding);
+}
+.footer p {
+    background-color: var(--footerBG);
+    padding: var(--padding);
+}
