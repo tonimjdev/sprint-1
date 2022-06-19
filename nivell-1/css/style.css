@@ -118,11 +118,13 @@ main .aside section {
   padding: calc(var(--padding) / 1.8);
 }
 
+/* Responsive */
 @media (max-width: 1200px) {
   .container {
     margin: 0 var(--marginContainers);
   }
 }
+/* Versió Tauleta */
 @media (max-width: 750px) {
   :root {
     --padding: 0.5rem;
@@ -167,8 +169,38 @@ main .aside section {
     padding: var(--padding);
   }
 }
-@media (max-width: 630px) {
+/* Versió Mobile */
+@media (max-width: 450px) {
   .container {
-    margin: 0 var(--marginContainers);
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  header {
+    gap: calc(var(--gap) * 1.1);
+  }
+  .nav {
+    flex-direction: column;
+  }
+  main {
+    background-color: rgb(253, 225, 65);
+  }
+  main .contenido {
+    background-color: rgb(15, 81, 110);
+    display: flex;
+    flex-flow: column nowrap;
+    padding: calc(var(--padding) * 2);
+  }
+  main .contenido article {
+    background-color: rgb(99, 149, 155);
+  }
+  main .contenido footer {
+    background-color: rgb(165, 220, 203);
+  }
+  main .aside {
+    background-color: rgb(251, 123, 90);
+    gap: calc(var(--gap) / 2);
+  }
+  main .aside section {
+    background-color: rgb(252, 178, 113);
   }
 }
