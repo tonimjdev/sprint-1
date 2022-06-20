@@ -1,0 +1,249 @@
+/* Estils per l'Sprint 1 - Nivell 2 de l'itinerari REACT de la IT Academy */
+/* Alumne: Toni Machado */
+/* RESET I FONTS GENERALS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+/* DECLAREM VARIABLES */
+:root {
+  /* Marges */
+  --padding: 2.8rem;
+  --paddingArticles: 0.8rem;
+  --margin: 0.8rem;
+  --gap: 1rem;
+  --marginContainers: 0.8rem;
+  /* Colors */
+  --grey: rgb(128, 128, 128);
+  --greyLight: rgb(216, 215, 215);
+  --greyLightText: rgb(143, 143, 143);
+  --salmon: rgba(242, 154, 125, 0.949);
+  --cajaArticulo: rgb(245, 241, 241);
+  --fecha: rgb(240, 229, 145);
+  --tituloArt: rgb(238, 129, 130);
+  --textArticulo: rgb(83, 83, 83);
+}
+/* TOT EL CONTINGUT */
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+/* HEADER */
+header {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../images/header.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: var(--marginContainers);
+}
+#burguer {
+  display: none;
+}
+.nav {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding) 3em var(--padding) 1.5em;
+}
+.nav > * {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: var(--gap);
+  list-style: none;
+}
+.nav .logo img {
+  width: 75px;
+  height: 75px;
+}
+.links {
+  gap: 6em;
+  margin-right: 3em;
+}
+.social {
+  position: relative;
+  left: 3em;
+}
+a {
+  text-decoration: none;
+  color: var(--grey);
+}
+h1 {
+  font-family: "Joan", serif;
+  font-weight: 400;
+  font-size: 1.8em;
+  color: var(--salmon);
+}
+.title {
+  margin: 6em 4.6em 0 4.6em;
+  background-color: rgba(114, 113, 113, 0.1);
+  padding: 2em 0 4.5em 0;
+  text-align: center;
+}
+/* Roll-over */
+.nav .links a:hover {
+  color: var(--salmon);
+}
+.fa-brands:hover {
+  transform: scale(1.4);
+  color: var(--salmon);
+}
+/* MAIN */
+main {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.6em;
+}
+.articles-container {
+  background-color: var(--greyLight);
+  width: 77%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+article {
+  background-color: var(--cajaArticulo);
+  padding: var(--paddingArticles);
+  margin: var(--margin);
+}
+.footer-articles {
+  grid-column: 1/3;
+  text-align: center;
+  margin: 0 1em 0.5em 1em;
+}
+.aside-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--greyLight);
+  width: 23%;
+  padding: 1em;
+  gap: 1em;
+  text-align: center;
+}
+img {
+  width: 100%;
+}
+.data-img {
+  color: var(--fecha);
+  position: relative;
+  top: -1.8em;
+  left: 0.5em;
+}
+.titol {
+  background-color: var(--tituloArt);
+  color: #fff;
+  position: relative;
+  top: -0.8em;
+  font-size: 1.4em;
+  padding: var(--paddingArticles) 0 0.1em 0.2em;
+}
+article p {
+  column-count: 2;
+  color: var(--textArticulo);
+  font-size: 1em;
+}
+.leer-mas {
+  margin-top: var(--margin);
+  color: var(--greyLightText);
+}
+/* FOOTER */
+.footer {
+  background-color: var(--cajaArticulo);
+  margin-top: var(--margin);
+  padding: 0.8em;
+  text-align: center;
+  color: var(--textArticulo);
+}
+
+/* RESPONSIVE Media-Query */
+/* Mantenim marges externs del contenidor */
+@media (max-width: 1200px) {
+  .container {
+    margin: 0 var(--marginContainers);
+  }
+}
+/* Reduim el Gap del Menu */
+@media (max-width: 1050px) {
+  .links {
+    gap: 2em;
+    margin-right: 0;
+  }
+}
+/* Més reducció del Gap al Menu i Articles 1 per fila */
+@media (max-width: 850px) {
+  .links {
+    gap: 1.5em;
+  }
+  .articles-container {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+  }
+  .aside-container {
+    width: 35%;
+  }
+}
+/* Menu hamburguesa, Articles i Aside en columna al 100% de Width */
+@media (max-width: 725px) {
+  .nav {
+    padding-top: 1.5em;
+  }
+  .logo {
+    order: 2;
+  }
+  #burguer {
+    display: inline-block;
+    transform: scale(1.6);
+  }
+  #burguer:hover {
+    color: var(--salmon);
+  }
+  .hamburguer {
+    order: 3;
+  }
+  .social {
+    transform: scale(1.6);
+    left: 0;
+    order: 1;
+    gap: 0.6em;
+  }
+  .links {
+    display: none;
+  }
+  main {
+    flex-direction: column;
+    gap: calc(var(--gap) * 1.5);
+  }
+  .articles-container {
+    width: 100%;
+  }
+  .aside-container {
+    width: 100%;
+    margin-bottom: var(--margin);
+  }
+}
+/* Només Logo i Menu Burguer, desapareix marge extern */
+@media (max-width: 500px) {
+ 
+  .container {
+    margin: 0;
+  }
+  .nav {
+    padding-top: 1em;
+  }
+  .social {
+    display: none;
+  }
+  .logo {
+    order: 1;
+    margin-left: 0;
+  }
+  .hamburguer {
+    order: 2;
+  }
+}
