@@ -39,7 +39,9 @@ header {
   background-image: url("../images/header.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  background-clip: moveUp 2s;
   margin-bottom: var(--marginContainers);
+  animation: moveDown 1.5s;
 }
 #burguer {
   display: none;
@@ -50,6 +52,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: var(--padding) 3em var(--padding) 1.5em;
+  animation: fadeIn 1.6s;
 }
 .nav > * {
   display: flex;
@@ -84,6 +87,8 @@ h1 {
   background-color: rgba(114, 113, 113, 0.1);
   padding: 2em 0 4.5em 0;
   text-align: center;
+  animation-delay: 5s;
+  animation: scale 1.5s;
 }
 /* Roll-over */
 .nav .links a:hover {
@@ -98,12 +103,14 @@ main {
   display: flex;
   flex-flow: row nowrap;
   gap: 0.6em;
+  
 }
 .articles-container {
   background-color: var(--greyLight);
   width: 77%;
   display: grid;
   grid-template-columns: 50% 50%;
+  animation: moveUp 1.5s;
 }
 article {
   background-color: var(--cajaArticulo);
@@ -124,6 +131,7 @@ article {
   padding: 1em;
   gap: 1em;
   text-align: center;
+  animation: moveUp 2.5s;
 }
 img {
   width: 100%;
@@ -159,6 +167,48 @@ article p {
   text-align: center;
   color: var(--textArticulo);
 }
+
+/* KEYFRAMES */
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes moveDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scale {
+  0% {
+    transform:scale(0);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 /* RESPONSIVE Media-Query */
 /* Mantenim marges externs del contenidor */
