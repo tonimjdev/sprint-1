@@ -131,6 +131,9 @@ article {
   text-align: center;
   animation: moveUp 2.5s;
 }
+h3 {
+  font-weight: 500;
+}
 img {
   width: 100%;
 }
